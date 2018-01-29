@@ -33,7 +33,7 @@ This will allow running dotnet cli commands from the application root folder lat
 
 - Create an interface called `IWineInfoRepository`, containing a method `WineInfo GetWineInfo(int id)`. Also create the `WineInfo` class, containing the properties: name, vintage and country.
 
-- This interface will be the abstraction which the new wine controller depend upon. Create a new field of type `IWineInfoRepository` and set it throug the constructor. This way we simply specify that the class needs some kind of wine info repository, but not specifically which implementation.
+- This interface will be the abstraction which the new wine controller depend upon. Create a new field of type `IWineInfoRepository` and set it throug the constructor of the WineController. This way we simply specify that the class needs some kind of wine info repository, but not specifically which implementation.
 
 ```csharp
 private IWineInfoRepository _wineRepo;
