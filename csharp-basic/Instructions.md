@@ -25,4 +25,6 @@ cd Excercises.Tests
 dotnet watch test
 ```
 
-Oppgaver finnes i ```Excercises```-mappen.
+Oppgaver finnes i ```Excercises```-mappen. Start med oppgavene i `11_ManipulateStrings.cs`. 
+
+Om du setter deg fast ved en oppgave, be om hjelp eller gå videre til neste, det er enkelt å se hvilke oppgaver som er feil eller mangler ut ifra test resultatene.
