@@ -60,7 +60,10 @@ namespace CSharpKurs.TestMethods
 
             var expected = new int[] { 1, 2, 3 };
 
-            Assert.AreEqual(expected, myVeryOwnList3.List);
+            Assert.AreEqual(expected.Length, myVeryOwnList3.List.Length);
+            Assert.AreEqual(expected[0], myVeryOwnList3.List[0]);
+            Assert.AreEqual(expected[1], myVeryOwnList3.List[1]);
+            Assert.AreEqual(expected[2], myVeryOwnList3.List[2]);
         }
 
         [TestMethod] 
