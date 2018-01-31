@@ -64,8 +64,13 @@ services.AddSingleton<IWineInfoRepository, DummyWineInfoRepository>();
 
 - Now the api should work again, returning the dummy values.
 
-## Serve static files 
-- Create index.html and main.js in a wwwroot folder
-- Add static files and default files features
-- Call the api through javascript dispalying the data
 
+## Additional tasks
+ > A logical next step could be to create an actual implementation of the info repository, e.g. by reading a file.
+
+- A data file containing wine information from vinmonopolet.no is provided (produkter.csv). Create a new implementation of the IWineInfoRepository that reads the file, parses it, and serves results from it when asked for it. Use "varenummer" as id when calling the method. Remember to replace the dummy implementation in the Startup.cs-file.
+
+Usefull functions you can use:
+ - File.ReadAllLines(string pathToFile)
+ - someString.Split(';')
+ - 
