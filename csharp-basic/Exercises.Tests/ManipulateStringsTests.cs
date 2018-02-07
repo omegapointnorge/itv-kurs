@@ -30,28 +30,32 @@ namespace CSharpKurs.TestMethods
 
             Assert.AreEqual("Hello to you too World", result);
         }
-
+        
+        [TestMethod]
         public void CheckForNullOrEmpty()
         {
             var result = _manipulaTestMethodrings.CheckForNullOrEmpty("");
 
             Assert.AreEqual("Empty string", result);
         }
-
+        
+        [TestMethod]
         public void CheckForNullOrEmpty2()
         {
             var result = _manipulaTestMethodrings.CheckForNullOrEmpty(null);
 
             Assert.AreEqual("Empty string", result);
         }
-
+        
+        [TestMethod]
         public void CheckForNullOrEmpty3()
         {
             var result = _manipulaTestMethodrings.CheckForNullOrEmpty("a");
 
             Assert.AreEqual("Hello World", result);
         }
-
+        
+        [TestMethod]
         public void CheckForNullOrEmpty4()
         {
             var result = _manipulaTestMethodrings.CheckForNullOrEmpty("Hello World");
