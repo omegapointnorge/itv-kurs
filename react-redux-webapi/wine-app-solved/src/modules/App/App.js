@@ -8,7 +8,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Wine List App</h1>
         </header>
-
+        {/* Add list with wines fetched from api */}
 
       </div>
     );
