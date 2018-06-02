@@ -2,6 +2,9 @@
   "name": "wine-app",
   "version": "0.1.0",
   "private": true,
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

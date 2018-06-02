@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import WineContainer from "../WineList/WineContainer";
 
 class App extends Component {
   render() {
@@ -8,8 +9,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Wine List App</h1>
         </header>
-        {/* Add list with wines fetched from api */}
-
+        <WineContainer />
       </div>
     );
   }
