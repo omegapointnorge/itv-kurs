@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
 import WineContainer from "../WineList/WineContainer";
+import { connect } from "react-redux";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Wine List App</h1>
+          <h1 className="App-title">{this.props.pageTitle}</h1>
         </header>
         <WineContainer />
       </div>
@@ -15,4 +16,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    pageTitle: state.pageTitle
+  };
+};
+
+export default connect(mapStateToProps)(App);

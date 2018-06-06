@@ -5,7 +5,7 @@ class WineInfo extends Component {
     background: "white",
     border: "solid",
     textAlign: "center",
-    width: "200px"
+    width: "300px"
   };
 
   render() {
