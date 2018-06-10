@@ -56,7 +56,7 @@ render() {
 ```
 
 ##Adding Redux
-Instead of having the state of the application directly in the react container component we will use a immutable state container (redux). 
+Instead of having the state of the application directly in the react container component we will use a immutable state container (redux). Have a look at [Redux Basics](https://redux.js.org/basics) for an introduction to redux.
 
 Go to `index.js` in src-directory, and wrap the `<App />` component in a provider component from react-redux.
 
@@ -64,7 +64,7 @@ Go to `index.js` in src-directory, and wrap the `<App />` component in a provide
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/App";
+import App from "./components/App/App";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
@@ -84,7 +84,7 @@ ReactDOM.render(
 
 This makes the redux state object available. Next we want to connect our react components to the redux state object. Go back to the `App`-component and connect it to redux.
 
-The `connect`-function takes a function as parameter that maps from the state object to a new object that will be the `props` of the component.
+The `connect`-function takes a function as parameter which maps from state to a new object that will be the `props` of the component.
 
 ```jsx
 import { connect } from "./react-redux";
@@ -93,7 +93,7 @@ import { connect } from "./react-redux";
 
 const mapStateToProps = state => {
   return {
-    title: state.title
+    title: state.pageTitle
   };
 };
 
@@ -101,3 +101,75 @@ export default connect(mapStateToProps)(App);
 ```
 
 Replace the title with this props. It should be accessible through `this.props.pageTitle`. 
+
+##Reducers
+The state in redux is never mutated, only changed through "actions" which are instructions about what to change. The action will be passed together with the current state to a "reducer" - a pure function that returns the new state of the application. 
+
+We will move the searched wine property to redux as well. 
+
+Start by creating a folder for the reducers, ext to the components folder, and create a file named `wines.js` with the following content:
+
+```jsx
+export const UPDATE_SEARCHED_WINE = "wines/UPDATE_SEARCHED_WINE";
+
+const initialState = { searchedWine: {} };
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case UPDATE_SEARCHED_WINE:
+      return {
+        ...state,
+        searchedWine: action.payload.wine
+      };
+    default:
+      return initialState;
+  }
+};
+```
+
+Broken down, the reducer is a simple function transforming the current state using the given action. In this example the action updates the `searchedWine` property with the wine given in the action. Actions can be any plain javascript object, but typically includes a type and a payload as the one above. The first line above is the action-type, which must be used by the components wanting to update the state.
+
+The `WineContainer`-component should emit this action to update the searchedWine property. Start by connecting the component to redux as previously done in `App`-component:
+
+```jsx
+// .....
+
+const mapStateToProps = state => {
+  return {
+    searchedWine: state.searchedWine
+  };
+};
+
+export default connect(mapStateToProps)(WineContainer);
+```
+
+The app will display nothing, since the state is empty, as we have not sent any actions yet. Actions are issued using a function named `dispatch` which is available in all redux-connected components. WineContainer should send a `UPDATE_SEARCHED_WINE`-action when loaded - use the `componentDidMount` lifecycle function.
+
+```jsx
+class WineContainer extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: UPDATE_SEARCHED_WINE,
+      payload: {
+        wine: {
+          name: "Louis Max Hautes-Côtes de Beaune 2015",
+          vintage: "2015",
+          country: "Frankrike"
+        }
+      }
+    });
+  }
+
+  //....
+
+}
+```
+
+Now the app should display the wine properties as before.
+
+
+## Fetching data from the wine api
+
+
+
+
