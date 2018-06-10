@@ -1,42 +1,32 @@
 import React, { Component } from "react";
 import WineInfo from "./WineInfo";
 import { connect } from "react-redux";
-import { UPDATE_SEARCHED_WINE } from "../../reducers/wines";
+import { updateSearchedWine } from "../../reducers/wines";
 
 class WineContainer extends Component {
   componentDidMount() {
-    this.props.dispatch({
-      type: UPDATE_SEARCHED_WINE,
-      payload: {
-        wine: {
-          name: "Louis Max Hautes-Côtes de Beaune 2015",
-          vintage: "2015",
-          country: "Frankrike"
-        }
-      }
-    });
+    this.props.dispatch(updateSearchedWine());
   }
-
-  containerStyle = {
-    paddingTop: "10px",
-    width: "80%",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column"
-  };
 
   render() {
     return (
-      <div style={this.containerStyle}>
+      <div style={containerStyle}>
         <WineInfo wine={this.props.searchedWine} />
-
         <hr />
       </div>
     );
   }
 }
+
+const containerStyle = {
+  paddingTop: "10px",
+  width: "80%",
+  margin: "0 auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column"
+};
 
 const mapStateToProps = state => {
   return {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import WineContainer from "../WineList/WineContainer";
-import { connect } from "react-redux";
 import "./App.css";
 
 class App extends Component {
@@ -8,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">{this.props.pageTitle}</h1>
+          <h1 className="App-title">Wine App</h1>
         </header>
         <WineContainer />
       </div>
@@ -16,10 +15,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    pageTitle: state.pageTitle
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;

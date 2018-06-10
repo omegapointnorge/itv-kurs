@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 
 class WineInfo extends Component {
-  containerStyle = {
-    background: "white",
-    border: "solid",
-    textAlign: "center",
-    width: "300px"
-  };
-
   render() {
     const { wine } = this.props;
     return (
@@ -18,6 +11,13 @@ class WineInfo extends Component {
       </div>
     );
   }
+
+  containerStyle = {
+    background: "white",
+    border: "solid",
+    textAlign: "center",
+    width: "300px"
+  };
 }
 
 export default WineInfo;

@@ -13,3 +13,16 @@ export default (state = initialState, action) => {
       return initialState;
   }
 };
+
+export const updateSearchedWine = () => {
+  return {
+    type: UPDATE_SEARCHED_WINE,
+    payload: {
+      wine: {
+        name: "Louis Max Hautes-Côtes de Beaune 2015",
+        vintage: "2015",
+        country: "Frankrike"
+      }
+    }
+  };
+};
