@@ -3,16 +3,28 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App/App";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import winesReducer from "./reducers/wines";
-import ReduxChart from "./components/DevTools/ReduxChart";
 
-const store = createStore(winesReducer);
+const initialState = {};
+const enhancers = [];
+const middleware = [];
+
+if (process.env.NODE_ENV === "development") {
+  const devToolsExtension = window.devToolsExtension;
+
+  if (typeof devToolsExtension === "function") {
+    enhancers.push(devToolsExtension());
+  }
+}
+
+const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
+
+const store = createStore(winesReducer, initialState, composedEnhancers);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <ReduxChart />
   </Provider>,
   document.getElementById("root")
 );
