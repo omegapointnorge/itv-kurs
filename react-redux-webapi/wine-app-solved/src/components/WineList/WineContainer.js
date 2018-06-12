@@ -1,18 +1,31 @@
 import React, { Component } from "react";
 import WineInfo from "./WineInfo";
+import SearchForm from "./SearchForm";
 import { connect } from "react-redux";
 import { updateSearchedWine } from "../../reducers/wines";
 
 class WineContainer extends Component {
-  componentDidMount() {
-    this.props.dispatch(updateSearchedWine());
+  constructor(props) {
+    super(props);
+    this.searchWine = this.searchWine.bind(this);
+  }
+
+  searchWine(vinmonopoletId) {
+    console.log(vinmonopoletId);
+    this.props.dispatch(updateSearchedWine(vinmonopoletId));
   }
 
   render() {
     return (
       <div style={containerStyle}>
-        <WineInfo wine={this.props.searchedWine} />
-        <hr />
+        <SearchForm buttonClicked={this.searchWine} />
+        <br />
+        {this.props.isFetching ? (
+          "request pending...."
+        ) : (
+          <WineInfo wine={this.props.searchedWine} />
+        )}
+        <br />
       </div>
     );
   }
@@ -30,7 +43,8 @@ const containerStyle = {
 
 const mapStateToProps = state => {
   return {
-    searchedWine: state.searchedWine
+    searchedWine: state.searchedWine,
+    isFetching: state.isFetching
   };
 };
 
