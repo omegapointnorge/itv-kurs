@@ -47,10 +47,10 @@ Open a new terminal and go to the /wine-api directory and run `dotnet watch run`
 
 We want our app to call this api rendering a pending message while the call is ongoing and possible errors if it fails. To achieve this we will use a simple library called [redux-thun](https://github.com/reduxjs/redux-thunk). This makes it possible to dispatch a function instead of a pure javascript object as we have seen previously. This can be used to in example first diaptch on action then wait a period before dispatching another. To solve our problem we will dispatch one action setting pending message, then calling the api and finaly dispatching either an action setting the searched wine, or the error from the api.
 
-* Have a look at the `searchWine`-method in `WineContainer`, it dispatches a function from [wines.js](/wine-app-solved/src/reducers/wines.js). This method set a pending flag, before setting some hardcoded values.
+* Have a look at the `searchWine`-method in `WineContainer`, it dispatches a function from [wines.js](/wine-app/src/reducers/wines.js). This method set a pending flag, before setting some hardcoded values.
 * Change this method to call the wines api using the vinmonopoletId from the method parameter. If it fails set a property `errorMessage` and render this instead of the WineInfo component.
 
-> Use [axios](https://github.com/axios/axios) to issue the API-call.
+> Use [axios](https://github.com/axios/axios) to issue the API-call:
 ```jsx
 axios.get('/user?ID=12345')
   .then(function (response) {
@@ -59,5 +59,7 @@ axios.get('/user?ID=12345')
   .catch(function (error) {
     console.log(error);
   });
-
 ```
+
+* EXTRA: When searching for a new wine, add the previouse searched wines to a 'history' prop, and render these at the bottom of the page.
+

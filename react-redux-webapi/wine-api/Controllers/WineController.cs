@@ -17,7 +17,8 @@ namespace WineApi.Controllers
         public IActionResult Get(int id)
         {
             var wineInfo = _wineRepo.GetWineInfo(id);
-            return wineInfo != null ? Ok(wineInfo) : (IActionResult)NotFound();
+            // return wineInfo != null ? Ok(wineInfo) : (IActionResult)NotFound();
+            return wineInfo != null ? Ok(wineInfo) : throw new System.Exception();
         }
     }
 }

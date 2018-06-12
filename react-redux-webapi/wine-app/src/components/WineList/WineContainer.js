@@ -16,18 +16,16 @@ class WineContainer extends Component {
   }
 
   render() {
-    if (this.props.errorMesage) {
-      return "ERROR";
-    }
     return (
       <div style={containerStyle}>
         <SearchForm buttonClicked={this.searchWine} />
         <br />
-        {this.props.isFetching ? "request pending...." : null}
-
-        {this.props.errorMesage ? "ERROR" : null}
+        {this.props.isFetching ? (
+          "request pending...."
+        ) : (
+          <WineInfo wine={this.props.searchedWine} />
+        )}
         <br />
-        <WineInfo wine={this.props.searchedWine} />
       </div>
     );
   }
@@ -46,8 +44,7 @@ const containerStyle = {
 const mapStateToProps = state => {
   return {
     searchedWine: state.searchedWine,
-    isFetching: state.isFetching,
-    errorMesage: state.errorMessage
+    isFetching: state.isFetching
   };
 };
 

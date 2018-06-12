@@ -23,6 +23,7 @@ namespace WineApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc();
             services.AddSingleton<VinmonopoletRepository, VinmonopoletRepository>();
         }
@@ -33,6 +34,8 @@ namespace WineApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            app.UseCors(builder => builder.WithOrigins("*"));
 
             app.UseMvc();
         }
