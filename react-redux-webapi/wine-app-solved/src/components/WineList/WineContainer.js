@@ -16,15 +16,11 @@ class WineContainer extends Component {
   }
 
   render() {
-    if (this.props.errorMesage) {
-      return "ERROR";
-    }
     return (
       <div style={containerStyle}>
         <SearchForm buttonClicked={this.searchWine} />
         <br />
         {this.props.isFetching ? "request pending...." : null}
-
         {this.props.errorMesage ? "ERROR" : null}
         <br />
         <WineInfo wine={this.props.searchedWine} />

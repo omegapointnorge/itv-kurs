@@ -18,12 +18,14 @@ export default (state = initialState, action) => {
     case FETCHING_WINE:
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
+        searchedWine: null
       };
     case FETCHING_WINE_FAILED:
       return {
         ...state,
         isFetching: false,
+        searchedWine: null,
         errorMessage: action.payload.errorMessage
       };
     default:
