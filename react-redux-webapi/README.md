@@ -61,5 +61,9 @@ axios.get('/user?ID=12345')
   });
 ```
 
-* EXTRA: When searching for a new wine, add the previouse searched wines to a 'history' prop, and render these at the bottom of the page.
+
+##Additional tasks
+* Display more properties in the wine info component
+* When searching for a new wine, add the previouse searched wines to a 'history' prop, and render these at the bottom of the page.
+* Make the search accept arbitrary strings and return the first 5 matches.
 
