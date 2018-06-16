@@ -7,9 +7,9 @@ If you are not at all familiar with react and concepts like jsx, props, componen
 ## Running the web application
 * Open `wine-app` directory in a terminal and run `yarn start` to run the development server. The app then be browsed at localhost:3000
 
-The `WineContainer` is responsible for holding the data from the redux store and issuing actions to update it, as well as potential errors etc. Container components then renders other 'view'-components. Read more about [container components](https://reactpatterns.com/#container-component).
+The container components is responsible for holding the data from the redux store and issuing actions to update it, as well as rendering other 'view'-components. Read more about [container components](https://reactpatterns.com/#container-component), then have a look at the [WineContainer](/wine-app/src/components/WineList/WineContainer.js)
 
-The container component three sections that are important. It is connected to redux using a library called `react-redux` and the `connect`-method, which defines which parts of the state is interesting for this specific component:
+The container component has three sections that are important. It is connected to redux using a library called `react-redux` and the `connect`-method, which defines which parts of the state is interesting for this specific component:
 
 ```jsx
 const mapStateToProps = state => {
@@ -20,7 +20,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(WineContainer);
 ```
-This will make the `searchedWine` property available in the props of the component, which is seen used in the `render`-method:
+This will make the `searchedWine` property available in the props of the component, which is used in the `render`-method:
 
 ```jsx
 render() {
@@ -33,12 +33,11 @@ render() {
 }
 ```
 
-The component issues an action in the `componentDidMount`-lifecycle method, which is a builtin function in all react components, it is called everytime the component is added to the DOM. Read more about [react lifecycle methods](https://reactjs.org/docs/react-component.html#componentdidmount). Have a look at `reducers/wines.js` to see how the reducer populates the state when the action is dispatched.
+The component issues an action in the `componentDidMount`-lifecycle method, which is a builtin function in all react components, it is called everytime the component is added to the DOM. Read more about [react lifecycle methods](https://reactjs.org/docs/react-component.html#componentdidmount). Have a look at [reducers/wine.js](/wine-app/src/reducers/wines.js) to see how the reducer populates the state when the action is dispatched.
 
 Install [redux devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) in google chrome to see the state and dispatched actions.
 
-Open the app and load the app, you should see the state and dispatched actions. We will use this to vizualize how rexux works. It is also very usefull when the app grows larger, and more actions are involved.
-
+Open the wine app and load the extension, you should see the state and dispatched actions. We will use this to vizualize how redux works. It is very usefull when the app grows larger, and more actions are involved.
 
 ## Fetching data from the wine api
 * The app displays a single page with information about a wine. We want to connect it to an api serving wine data. The api might be unstable so we want to give the user a feel for what is happening while the data is fetched. 
