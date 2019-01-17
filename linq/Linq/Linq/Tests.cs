@@ -53,7 +53,7 @@ namespace Linq
 
 
         [TestMethod]
-        public void Get_Persons_Where_IDs_Are_Even_Numbers()
+        public void What_does_this_do_1()
         {
             var result = Persons.Where(x => x.Id % 2 == 0);
 
@@ -61,6 +61,36 @@ namespace Linq
             var listIds = new List<int> { 2, 4, 6, 8 };
 
             ListsAreEqual(result, listIds);
+        }
+
+
+        [TestMethod]
+        public void Create_A_String_That_Concats_FirstNames_Of_Persons_Born_Before_1970_Ordered_By_Birthday_Descending()
+        {
+            var result = Persons.Where(x => x.Id % 2 == 0);
+
+            //TODO: Update list Ids to pass test
+            var concatedString = Persons
+                .Where(x => x.Birthday.Year < 1970)
+                .OrderByDescending(x => x.Birthday)
+                .Select(x => x.FirstName)
+                .Aggregate((acc, firstname) => acc + firstname);
+
+            Assert.AreEqual("BenteHelle", concatedString);
+        }
+
+
+
+        [TestMethod]
+        public void What_does_this_do_2()
+        {
+            var mysteryValue = Persons
+             .Select(x => x.Birthday.Year)
+             .Aggregate((acc, x) => x > 2000 ? acc + x : acc);
+
+            var correctValue = 2001;
+
+            Assert.AreEqual(correctValue, mysteryValue);
         }
 
         private void ListsAreEqual(IEnumerable<Person> persons, List<int> result)
@@ -80,9 +110,9 @@ namespace Linq
                 new Person(5, "Helle", "Karlsen", new DateTime(1927, 3, 5)),
                 new Person(6, "Stine", "Bråthen", new DateTime(1970, 11, 1)),
                 new Person(7, "Truls", "Krogh", new DateTime(1977, 03, 1)),
-                new Person(8, "Bente", "Knek", new DateTime(1977, 03, 1)),
+                new Person(8, "Bente", "Knek", new DateTime(1967, 03, 1)),
                 new Person(9, "Petter", "Arvesen", new DateTime(1977, 03, 1))
-            };
+            }.OrderBy(x => x.Id).ToList();
         }
     }
 
