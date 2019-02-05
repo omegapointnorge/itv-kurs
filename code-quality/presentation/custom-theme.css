@@ -1,0 +1,8 @@
+.shining {
+    background-image: url('/images/the-shining.jpg');
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
