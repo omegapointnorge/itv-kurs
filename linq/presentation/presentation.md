@@ -10,3 +10,14 @@ public static void Main()
       var car = cars.First(x => x.Model == "BMW");  
 }
 ```
+
+--
+#### LINQ
+```
+public static void Main()
+{
+      var car = cars.First(x => x.Model == "BMW");  
+}
+```
+
+--
