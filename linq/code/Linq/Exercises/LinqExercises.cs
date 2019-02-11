@@ -1,10 +1,11 @@
+using Linq.Solution;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Linq
 {
-    public class Exercises
+    public class LinqExercises
     {
         public IEnumerable<Person> E1_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
         {

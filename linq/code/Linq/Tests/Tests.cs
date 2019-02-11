@@ -9,15 +9,15 @@ namespace Linq
     public class LinqTests
     {
         public List<Person> Persons { get; set; }
-        public Exercises Exercises { get; set; }
-        public Solutions Solutions { get; set; }
+        public LinqExercises Exercises { get; set; }
+        public LinqSolutions Solutions { get; set; }
 
         [TestInitialize()]
         public void Startup()
         {
             Persons = GetPersons();
-            Exercises = new Exercises();
-            Solutions = new Solutions();
+            Exercises = new LinqExercises();
+            Solutions = new LinqSolutions();
         }
 
         [TestMethod]

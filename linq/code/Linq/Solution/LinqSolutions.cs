@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Linq
 {
-    public class Solutions
+    public class LinqSolutions
     {
         public IEnumerable<Person> S1_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
         {
