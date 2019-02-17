@@ -1,0 +1,15 @@
+mark {
+  text-decoration: underline;
+  background: none;
+  color: yellow;
+}
+
+.note {
+  font-size: 20px !important;
+}
+
+.col-2{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
