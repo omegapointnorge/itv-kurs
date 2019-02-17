@@ -64,6 +64,7 @@ Func<Person, bool> NameStartingWithA()
       return x => x.FirstName.StartsWith("A");
 }
 ```
+
 ...
 
 ```
@@ -145,8 +146,17 @@ run command **_dotnet test_** in folder ../itv-kurs/linq/code to test implementa
 
 ---
 
-#### JavaScript
+#### Bonus exercise
 
-```
+<div class="note">
+Open
+<br>
+../itv-kurs/linq/exercises/ThatHasExercise.cs
+<br>
+<br>
+Implement a method called ThatHas that works in the same way as LINQ.Where()
+</div>
 
-```
+---
+
+Lambda is not unique to C#
