@@ -4,9 +4,4 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="E5_Conditionals\" />
-    <Folder Include="E6_Functions\" />
-  </ItemGroup>
-
 </Project>
