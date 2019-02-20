@@ -2,9 +2,10 @@
 theme : "Black"
 customTheme: "custom-theme"
 separator: ^---$
+title: "Code quality"
 ---
 
-## Itverket AS
+## ITverket AS
 
 ---
 
