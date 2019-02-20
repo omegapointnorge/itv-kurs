@@ -7,7 +7,6 @@ namespace CodeQuality.S4_FunctionalityGrouping
         public string Code { get; set; }
         public string Price { get; set; }
         public string Name { get; set; }
-        private Supplier Supplier { get; set; }
     }
 
     public class Store

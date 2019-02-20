@@ -14,6 +14,8 @@ namespace CodeQuality.S1_Readability
         public CheckoutState Checkout(List<Product> products)
         {
 
+
+            //TODO: Magne må løses denne på nytt. 
             foreach (var product in products)
             {
 
