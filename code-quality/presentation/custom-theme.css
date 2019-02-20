@@ -2,7 +2,22 @@
     background-image: url('/images/the-shining.jpg');
     height: 200px;
     background-repeat: no-repeat;
-    background-size: cover;
-
-    
+    background-size: cover;        
 }
+
+div.info {
+    display: inline-block;
+    width: 40%;
+}
+
+div.info img {
+  float: left;
+  margin: 0;
+}
+
+.info p {
+    font-size: 60%;
+    float: left;
+    margin: 15px 10px 0px 10px;
+}
+
