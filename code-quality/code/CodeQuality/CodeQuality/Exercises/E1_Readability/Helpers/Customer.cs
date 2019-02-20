@@ -7,5 +7,6 @@ namespace CodeQuality.E1_Readability
         public DateTime BirthDay { get; internal set; }
         public int Age { get; internal set; }
         public int NumberOfYearsAsClient { get; internal set; }
+        public string WhiteListStatus { get; set; }
     }
 }
