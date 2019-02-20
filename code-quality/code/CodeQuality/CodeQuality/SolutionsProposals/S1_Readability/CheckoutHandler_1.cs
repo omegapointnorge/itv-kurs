@@ -16,7 +16,7 @@ namespace CodeQuality.S1_Readability
 
             foreach (var product in products)
             {
-                if (ProductIsMarkedAsPotensiallyDangerous(product))
+                if (ProductIsMarkedAsPotentiallyDangerous(product))
                 {
                     NotifyGovernmentOfPurchase(product);
                 }
@@ -26,7 +26,7 @@ namespace CodeQuality.S1_Readability
 
         }
 
-        private bool ProductIsMarkedAsPotensiallyDangerous(Product product)
+        private bool ProductIsMarkedAsPotentiallyDangerous(Product product)
         {
             return product.Code == "EX" || product.Code == "HAZ";
         }
