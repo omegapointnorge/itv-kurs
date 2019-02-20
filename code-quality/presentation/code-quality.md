@@ -1,10 +1,11 @@
 ---
 theme : "Black"
 customTheme: "custom-theme"
-seperator: ^---$
+separator: ^---$
 ---
 
 ## Itverket AS
+
 ---
 
 ## Om oss
