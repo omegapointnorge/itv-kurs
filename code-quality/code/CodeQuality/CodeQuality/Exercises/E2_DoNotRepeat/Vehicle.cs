@@ -19,7 +19,7 @@ namespace CodeQuality.E2_DoNotRepeat
             var month = FirstTimeDelivery.Month;
             var day = FirstTimeDelivery.Day;
 
-            var dateString = day + "." + GetNorwegianMonthAsString() + year;
+            var dateString = day + "." + GetNorwegianMonthAsString() + " " + year;
 
             var result = "The car was delivered to its first owner on " + dateString;
 

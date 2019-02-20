@@ -23,12 +23,12 @@ namespace CodeQuality.S1_Readability
                 totalPrice += priceCalculator.GetPriceOfProduct(cartElement);
             }
 
-            return CustomerIsEligableForSeniorDiscount(customer) ?
+            return CustomerIsEligibleForSeniorDiscount(customer) ?
              totalPrice * SeniorDiscountRate :
              totalPrice;
         }
 
-        private bool CustomerIsEligableForSeniorDiscount(Customer customer)
+        private bool CustomerIsEligibleForSeniorDiscount(Customer customer)
         {
             return customer.Age > 65 && customer.NumberOfYearsAsClient > 10;
         }
@@ -42,12 +42,12 @@ namespace CodeQuality.S1_Readability
             var fullprice = priceDataForCurrentDate.FullPrice;
 
             bool priceHasDiscount = priceDataForCurrentDate.Discount > 0;
-            bool eligableForDiscount = IsDiscountQuantityRequirementFullfilled(cartElement.Quantity, priceDataForCurrentDate.AmountMinLimitForDiscountToApply);
+            bool eligibleForDiscount = IsDiscountQuantityRequirementFulfilled(cartElement.Quantity, priceDataForCurrentDate.AmountMinLimitForDiscountToApply);
 
-            return (priceHasDiscount && eligableForDiscount) ? fullprice * priceDataForCurrentDate.Discount : fullprice;
+            return (priceHasDiscount && eligibleForDiscount) ? fullprice * priceDataForCurrentDate.Discount : fullprice;
         }
 
-        private bool IsDiscountQuantityRequirementFullfilled(int quantity, int limit)
+        private bool IsDiscountQuantityRequirementFulfilled(int quantity, int limit)
         {
             return limit >= quantity;
         }
