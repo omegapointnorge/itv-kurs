@@ -21,12 +21,6 @@ title: "Code quality"
     <p>Magne Ingvaldsen<br/>mi@itverket.no</p>
 </div>
 
-
-
----
-<blockquote id="quote">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.<span>John F. Woods</span></blockquote>
-<div class="shining"></div>
-
 ---
 
 ### Kodekvalitet
@@ -58,15 +52,33 @@ main(m1,s) char *s; {
 ```
 
 ---
-### Lesbarhet
+<blockquote id="quote">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.<span>John F. Woods</span></blockquote>
+<div class="shining"></div>
 
 ---
-### Navngivning
-<img src="/images/hard_task.jpg" />
 
----
 ### Indentering
 <img src="/images/indentation.jpg" />
+
+---
+<blockquote id="quote">It’s OK to figure out murder mysteries, but you shouldn’t need to figure out code. You should be able to read it.
+<span>Steve McConnell</span></blockquote>
+---
+<img src="/images/hard_task.jpg" />
+
+
 ---
 
-### Gjentakende kode 
+### Gjentakende kode
+<blockquote id="quote">Measuring programming progress by lines of code is like measuring aircraft building progress by weight.
+<span>Bill Gates</span> 
+</blockquote>
+---
+
+### "Smart" kode
+
+---
+
+### Skriv tester
+
+---
