@@ -219,4 +219,7 @@ Note:
 <br />
 ### Legacy og ydmykhet
 
+---
+
+git clone https://github.com/itverket/itv-kurs.git
 
