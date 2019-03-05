@@ -9,7 +9,7 @@ namespace CodeQuality.S2_DoNotRepeat
     {
         public double AddMvaToPrice(double priceWithoutMva, Industry industry)
         {
-            var mvaRate = 1d;
+            var mvaRate = 0d;
             switch (industry)
             {
                 case Industry.General:

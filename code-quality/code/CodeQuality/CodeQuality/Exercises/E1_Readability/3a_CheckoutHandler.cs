@@ -17,13 +17,14 @@ namespace CodeQuality.E1_Readability
             {
                 if (Store.Stock.GetProducts(product.Code).Count() > 0)
                 {
-                    if (product.Code == "A")
+                    bool productIsAlcohol = product.Code == "A";
+                    if (productIsAlcohol)
                     {
                         return CheckoutState.MustShowId;
                     }
-                    if (product.Code == "EX" || product.Code == "HAZ")
+                    if (ProductIsDangerous(product))
                     {
-                        if(customer.WhiteListStatus != "Ok")
+                        if (customer.WhiteListStatus != "Ok")
                             NotifyGovernmentOfPurchase();
                     }
                 }
@@ -36,6 +37,11 @@ namespace CodeQuality.E1_Readability
 
             return CheckoutState.Completed;
 
+        }
+
+        private static bool ProductIsDangerous(Product product)
+        {
+            return product.Code == "EX" || product.Code == "HAZ";
         }
 
         private void NotifyGovernmentOfPurchase()
