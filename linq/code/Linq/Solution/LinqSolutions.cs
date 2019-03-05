@@ -54,7 +54,7 @@ namespace Linq
             return data.Count();
         }
 
-        public int S10_Get_The_Number_Of_Kids_Combined(IEnumerable<Person> data)
+        public int S10_Get_The_Total_Number_Of_Kids_From_All_Persons_Combined(IEnumerable<Person> data)
         {
             return data.Sum(x => x.NumberOfKids);
         }
