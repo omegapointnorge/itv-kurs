@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CodeQuality.E2_DoNotRepeat;
 
 namespace CodeQuality.S2_DoNotRepeat
 {

@@ -11,14 +11,11 @@ namespace CodeQuality.S1_Readability
     {
         private Store Store { get; set; }
 
-        public CheckoutState Checkout(List<Product> products)
+        public CheckoutState Checkout(List<Product> products, Customer customer)
         {
 
-
-            //TODO: Magne må løses denne på nytt. 
             foreach (var product in products)
             {
-
                 bool productIsInStock = Store.Stock.GetProducts(product.Code).Count() > 0;
                 if (!productIsInStock) { return CheckoutState.OutOfStock; }
 
@@ -27,9 +24,26 @@ namespace CodeQuality.S1_Readability
                 {
                     return CheckoutState.MustShowId;
                 }
+
+                bool productIsDangerous = product.Code == "EX" || product.Code == "HAZ";
+                if (productIsDangerous)
+                {
+                    NotifyGovernmentOfPurchase(customer);
+                }
             }
 
             return CheckoutState.Completed;
+
+        }
+
+        private void NotifyGovernmentOfPurchase(Customer customer)
+        {
+            if (customer.WhiteListStatus == "Ok")
+            {
+                return;
+            }
+
+            //Send notification
 
         }
     }
