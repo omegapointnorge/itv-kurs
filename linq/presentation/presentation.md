@@ -43,9 +43,10 @@ LINQ to the rescue
 
 ```
 
-personList.Where(x => x.FirstName.StartsWith("A"));
+persons.Where(x => x.FirstName.StartsWith("A"));
 
 ```
+
 
 Note:
 What do we need in order to make this work?
@@ -57,7 +58,25 @@ Break the LINQ-query into parts and explain them
 
 ---
 
-<mark>personList.Where</mark>(x => x.FirstName.StartsWith("A"));
+#### Chaining
+
+```
+
+persons
+.Where(x => x.FirstName.StartsWith("A"))
+.OrderBy(x => x.LastName)
+.Select(x => x.LastName);
+
+```
+---
+
+<mark>persons.Where</mark>(x => x.FirstName.StartsWith("A"));
+
+<hr>
+
+```
+PersonsWithFirstnameStartingByA(List<Person> persons){ ...
+```
 
 ---
 
@@ -81,7 +100,9 @@ var fullName = person.GetFullName();
 
 ---
 
-personList.Where( <mark> x => x.FirstName.StartsWith("A")</mark> );
+persons.Where( <mark> x => x.FirstName.StartsWith("A")</mark> );
+
+
 
 ---
 
@@ -114,16 +135,16 @@ public int SquareNumber(int x){
 
 <div class="small">
 <br>
-personList.Where(<mark>x</mark> => x.FirstName.StartsWith("A"));
+persons.Where(<mark>x</mark> => x.FirstName.StartsWith("A"));
 <br>
 
-personList.Where(<mark>p</mark> => p.FirstName.StartsWith("A"));
+persons.Where(<mark>p</mark> => p.FirstName.StartsWith("A"));
 <br>
 
-personList.Where(<mark>person</mark> => person.FirstName.StartsWith("A"));
+persons.Where(<mark>person</mark> => person.FirstName.StartsWith("A"));
 <br>
 
-personList.Where(<mark>pizza</mark> => pizza.FirstName.StartsWith("A"));
+persons.Where(<mark>pizza</mark> => pizza.FirstName.StartsWith("A"));
 
 </div>
 
@@ -134,7 +155,7 @@ Func<Person, bool> NameStartingWithA()
 {
       return x => x.FirstName.StartsWith("A");
 }
-return data.Where(NameStartingWithA());
+return persons.Where(NameStartingWithA());
 
 ```
 
@@ -143,7 +164,7 @@ return data.Where(NameStartingWithA());
 ```
 
 Func<Person, bool> cond = x => x.FirstName.StartsWith("A");
-return data.Where(cond);
+return persons.Where(cond);
 
 ```
 
@@ -151,7 +172,7 @@ return data.Where(cond);
 
 ```
 
-return data.Where(x => x.FirstName.StartsWith("A"));
+return persons.Where(x => x.FirstName.StartsWith("A"));
 ```
 
 <div class="note">
@@ -163,6 +184,30 @@ Since lambda can be anonymous it is optional to create the expression as a varia
 
 #### Generics
 ```
+public class IntComparer
+{
+      public bool IsTheSame(int value1, int value2)
+      {
+            return value1.Equals(value2);
+      }
+}
+```
+
+<hr>
+
+```
+public class StringComparer
+{
+      public bool IsTheSame(string value1, string value2)
+      {
+            return value1.Equals(value2);
+      }
+}
+```
+
+---
+#### Generics
+```
      public class Comparer<T>
      {
            public bool IsTheSame(T value1, T value2)
@@ -171,7 +216,6 @@ Since lambda can be anonymous it is optional to create the expression as a varia
            }
      }
 ```
-
 <hr>
 
 ```
