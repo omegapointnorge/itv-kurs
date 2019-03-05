@@ -100,7 +100,7 @@ namespace Linq
         [TestMethod]
         public void T10_1_Get_The_Number_Of_Kids_Combined()
         {
-            var result = Exercises.E10_Get_The_Number_Of_Kids_Combined(Persons);
+            var result = Exercises.E10_Get_The_Total_Number_Of_Kids_From_All_Persons_Combined(Persons);
             Assert.AreEqual(17, result);
         }
 

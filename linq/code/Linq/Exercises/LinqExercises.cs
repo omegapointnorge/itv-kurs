@@ -9,7 +9,7 @@ namespace Linq
     {
         public IEnumerable<Person> E1_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
         {
-            return data.Where(x => x.FirstName.StartsWith("A"));
+            return Enumerable.Empty<Person>();
         }
 
         public Person E2_Get_First_Person_In_List(IEnumerable<Person> data)
