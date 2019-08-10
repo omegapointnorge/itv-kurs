@@ -33,7 +33,7 @@ module.exports = {
     rules: [
       /**
        * Minify html
-       * 
+       *
        * Outputs our index.html as string
        */
       {
@@ -45,12 +45,12 @@ module.exports = {
           }
         ]
       },
-       /**
+      /**
        * Minify CSS
-       * 
+       *
        * Relevant CSS is inlined in respective bundle.js file
-       * 
-       * css-loader: import css file as a module. 
+       *
+       * css-loader: import css file as a module.
        * style-loader Add css to javascript file.
        */
       {
@@ -89,34 +89,8 @@ module.exports = {
      * each build to avoid cluttering our dist folder with old files.
      */
     new CleanWebpackPlugin()
-  ],
-  /**
-   * Webpack offers a dev server set up with live reloading
-   * 
-   * npm install webpack-dev-server
-   * 
-   * 'contentBase': The folder to which files should be served from.
-   * 
-   * Note the we have setup a script in package.json to run live server
-   * 
-   *  "scripts": {
-   *      ...
-          "start": "webpack-dev-server --open"
-          ...
-        },
-   */
-  devServer: {
-    contentBase: './dist'
-  },
-  /**
-   * During build our code gets bundle and minified making it debug
-   * when errors occur.
-   *
-   * Therefore, Javascript offers source maps which map compiled code
-   * back to original source code. This makes sure that we can read
-   * our code as we wrote when debugging issues in the browser
-   *
-   * To turn on source-maps we include the following:
-   */
-  devtool: 'inline-source-map'
+  ]
+ 
+
+  // devtool: 'inline-source-map'
 };

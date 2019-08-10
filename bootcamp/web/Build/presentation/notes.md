@@ -6,16 +6,20 @@
     Setup inline-source-maps
     Setup dev-server.
 
-2.  Explain package.json
+2)  Explain package.json
 
-3.  Entry points
+    Explain that default webpack uses webpack.config.js
+    We have created common, dev and prod in order to share some config
+    and must therefore set which config files to use in our scripts.
+
+3)  Entry points
     Set entry points of application. Defaults to index.js
     Possibly show that we can change the entry point to something else
     and have multiple entry points.
 
     e.g. scripts running at once when index.html is served.
 
-4.  Loaders
+4)  Loaders
     They are used to import different types of files to our bundle.
 
     In our config, each loader are set up under
@@ -56,7 +60,7 @@
     Data:
     npm install csv-loader xml-loader
 
-5.  Index html
+5)  Index html
 
     A web page needs to have something to present to users when they visit the page.
     This entry point file is called index.html and we need to create one during our build.
@@ -98,5 +102,12 @@
 
 1. Create a separate css files per module
 2. Minify css
-3. Hot module reloading
-4.
+
+3. Hot module replacement
+   During development only refresh the affected bundles
+
+4. Tree shaking
+   Remove dead code from bundle
+
+5. Lazy loading
+   Load needed code when first required.
