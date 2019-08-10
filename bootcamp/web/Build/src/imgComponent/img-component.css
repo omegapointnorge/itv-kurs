@@ -1,8 +1,8 @@
 .colors{
-    padding:10px;
     background: url('./../colors.jpg');
-    background-size: cover;
-    height: 80vh;
+    padding: 10px;
+    background-size: contain;
+    height: 40vh;
   }
   
   
