@@ -2,8 +2,10 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+  /**
+   * Tell webpack that this is a development build.
+   */
   mode: 'development',
-
   /**
    * During build our code gets bundle and minified making it debug
    * when errors occur.
