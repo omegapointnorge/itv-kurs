@@ -1,0 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: black;
+}
+
+ul ul {
+  font-size: 24px !important;
+}
+
+#package-json + pre,
+#htmlwebpackplugin + pre,
+#scripts-inserted-into-index-html + pre {
+  font-size: 16px;
+}
+
+#plugins-vs-loaders + pre {
+  font-size: 14px;
+}
+
+pre {
+  background: #222;
+  padding-left: 20px !important;
+}
+
+.frontend-map {
+  background-image: url('/images/frontendMap.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 40vh;
+  margin: 0 auto;
+  text-align: center;
+}

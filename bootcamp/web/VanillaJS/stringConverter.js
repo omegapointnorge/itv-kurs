@@ -1,0 +1,5 @@
+console.log("".half())
+console.log("hei".half())
+console.log("test".half())
+console.log("Halvparten".half())
+console.log("Oslo".half())
