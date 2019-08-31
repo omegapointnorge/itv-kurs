@@ -1,0 +1,18 @@
+<h1>
+  Hi, and welcome. Search by user below
+</h1>
+
+<input [(ngModel)]="username" />
+
+<button (click)="getUser()">Click me</button>
+
+<div id="content">
+  <div *ngIf="loadingUser" class="spin"></div>
+  <div *ngIf="!loadingUser && githubUserInfo.login" class="card">
+    <h2>{{ githubUserInfo.login }}</h2>
+
+    <a [href]="githubUserInfo.blog" style="display: block">{{ githubUserInfo.blog }}</a>
+
+    <img *ngIf="githubUserInfo.avatar_url" [src]="githubUserInfo.avatar_url" width="200" height="200" />
+  </div>
+</div>

@@ -17,8 +17,8 @@ pre {
   padding-left: 20px !important;
 }
 
-.frontend-map {
-  background-image: url('/images/frontendMap.jpg');
+.lifecycle {
+  background-image: url('/images/lifecycle.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

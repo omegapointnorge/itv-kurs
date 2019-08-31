@@ -1,0 +1,42 @@
+.card {
+  background: lightgray;
+  padding: 20px;
+  margin: 20px 0;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+.card * {
+  margin-bottom: 20px;
+}
+
+.card *:last-child {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 20px;
+}
+
+.card h2 {
+  margin: inherit auto;
+}
+
+.spin {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-top: 1px solid #342342;
+  animation: spin 1s linear infinite forwards;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
