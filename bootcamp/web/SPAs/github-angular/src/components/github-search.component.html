@@ -6,7 +6,7 @@
 
 <button (click)="getUser()">Click me</button>
 
-<div id="content">
+<div>
   <div *ngIf="loadingUser" class="spin"></div>
   <div *ngIf="!loadingUser && githubUserInfo.login" class="card">
     <h2>{{ githubUserInfo.login }}</h2>
