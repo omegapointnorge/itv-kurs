@@ -236,7 +236,7 @@ Clean up our dist folder before each build.
 
 ### Code splitting
 
-- We have a depenecy to lodash in both our bundles.
+- We have a dependency to lodash in both our bundles.
 - As a result, lodash is bundled in both of them.
 - Ideally, lodash should only be bundled once to avoid duplication.
 
