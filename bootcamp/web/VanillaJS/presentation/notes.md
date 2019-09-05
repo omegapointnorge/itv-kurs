@@ -20,6 +20,10 @@ customTheme: 'theme'
 
 ---
 
+### Document Object Model (DOM)
+
+---
+
 ### Code
 
 ---
