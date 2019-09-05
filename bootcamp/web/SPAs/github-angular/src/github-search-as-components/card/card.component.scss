@@ -1,0 +1,23 @@
+.card {
+  background: lightgray;
+  padding: 20px;
+  margin: 20px 0;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+.card * {
+  margin-bottom: 20px;
+}
+
+.card *:last-child {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 20px;
+}
+
+.card h2 {
+  margin: inherit auto;
+}
+

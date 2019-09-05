@@ -1,0 +1,14 @@
+<app-header [text]="'Hi, and welcome. Search by user below'"></app-header>
+
+<input [(ngModel)]="username" />
+<button (click)="getUser()">Click me</button>
+
+<div>
+  <app-spinner [show]="loadingUser"></app-spinner>
+  <app-card [show]="!loadingUser && githubUserInfo.login">
+    <app-header [text]="githubUserInfo.login"></app-header>
+
+    <app-link [linkRef]="githubUserInfo.blog" [linkText]="githubUserInfo.blog"></app-link>
+    <app-avatar [imageUrl]="githubUserInfo.avatar_url"></app-avatar>
+  </app-card>
+</div>
