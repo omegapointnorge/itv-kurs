@@ -22,20 +22,24 @@ const GithubSearch = () => {
       <h1>Hi, and welcome. Search by user below</h1>
       <input onChange={e => setUserName(e.currentTarget.value)}></input>
       <button onClick={() => getUser()}>Click me</button>
-      {isLoadingUser ? <div className="spin"></div> : <React.Fragment />}
-      {githubUser.login ? (
-        <div className="card">
-          <h2>{githubUser.login}</h2>
+      <div>
+        {isLoadingUser ? <div className="spin"></div> : <React.Fragment />}
+        {githubUser.login ? (
+          <div>
+            <div className="card">
+              <h2>{githubUser.login}</h2>
 
-          <a href={githubUser.blog} style={{ display: 'block' }}>
-            {githubUser.blog}
-          </a>
+              <a href={githubUser.blog} style={{ display: 'block' }}>
+                {githubUser.blog}
+              </a>
 
-          {githubUser.avatar_url ? <img src={githubUser.avatar_url} alt="avatar" width="200" height="200" /> : <React.Fragment />}
-        </div>
-      ) : (
-        <React.Fragment />
-      )}
+              {githubUser.avatar_url ? <img src={githubUser.avatar_url} alt="avatar" width="200" height="200" /> : <React.Fragment />}
+            </div>
+          </div>
+        ) : (
+          <React.Fragment />
+        )}
+      </div>
     </div>
   );
 };

@@ -28,4 +28,27 @@ customTheme: 'theme'
 ---
 
 ### Components
+
 - Avoid duplication
+
+---
+
+<br>
+#### React
+
+```
+    npx create-react-app "name of your app"
+    cd "name of your app"
+    npm start
+```
+
+<br>
+
+#### Angular
+
+```
+    npm install -g @angular/cli
+    ng new "name of your app"
+    cd "name of your app"
+    ng serve
+```
