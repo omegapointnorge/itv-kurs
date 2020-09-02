@@ -1,7 +1,7 @@
 async function getUser() {
   const username = document.getElementById('username-input').value;
 
-  const userCard = newFunction();
+  const userCard = resetUserCardForSearch();
 
   let response = await fetch(`https://api.github.com/users/${username}`);
 
@@ -26,7 +26,7 @@ async function getUser() {
   console.log('done');
 }
 
-function newFunction() {
+function resetUserCardForSearch() {
   const userCard = document.getElementById('usercard');
   const statusIndicator = document.getElementById('statusIndicator');
   userCard.innerHTML = '';
