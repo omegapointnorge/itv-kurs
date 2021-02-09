@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "projects": [],
+    "hasLoaded": false
+  },
+  "contacts": {
+    "contacts": [],
+    "hasLoaded": false
+  },
+  "user": {
+    "userInfo": {
+      "name": "",
+      "title": ""
+    },
+    "hasLoaded": false
+  },
+  "posts": {
+    "posts": [],
+    "hasLoaded": false
+  }
+}
+
+
