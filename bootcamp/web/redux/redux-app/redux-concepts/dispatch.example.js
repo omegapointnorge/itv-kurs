@@ -2,14 +2,13 @@ const store = {
   dispatch: function () {},
 };
 
-
-
-const increment = () => {
+const addTodo = (text) => {
   return {
-    type: "counter/increment",
+    type: "todos/todoAdded",
+    payload: text,
   };
 };
 
-store.dispatch(increment());
+store.dispatch(addTodo("Buy milk"));
 
 console.log(store.getState());
