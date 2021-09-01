@@ -1,15 +1,34 @@
 html {
-  background-color: lightskyblue;
+  background-color: #f3ebe5;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+}
+
+#content {
+  display: grid;
+  place-items: center;
+  margin-top: 30px;
 }
 
 .card {
   background: lightgray;
   padding: 20px;
-  margin: 20px 0;
   display: inline-block;
   visibility: hidden;
-  width: 250px;
+  width: 220px;
   text-align: center;
+  box-shadow: 0px 10px 10px 0px grey;
 }
 
 .card.visible {
@@ -23,10 +42,6 @@ html {
   margin-bottom: 0px;
   border-bottom: 1px solid #999;
   padding-bottom: 20px;
-}
-
-.card h2 {
-  margin: inherit auto;
 }
 
 #statusIndicator.spin {

@@ -4,29 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Github Username</title>
+    <title>VanillaJs - Github Username </title>
     <link rel="stylesheet" type="text/css" href="app.css" />
   </head>
 
   <script src="index.js"></script>
   <!-- <script src="index-async-await.js"></script> -->
   <body>
-    <h1>
-      Hi, and welcome. Search by user below
-    </h1>
+    <main>
+      <div>
+        <h1>Github users</h1>
 
-    <input type="text" id="username-input" />
+        <input type="text" id="username-input" placeholder="Github username" autofocus />
+        <button onclick="getUser()">Search</button>
+      </div>
 
-    <button onclick="getUser()">Click me</button>
-
-    <div id="content">
-      <div id="statusIndicator"></div>
-      <div id="usercard" class="card"></div>
-    </div>
+      <div id="content">
+        <div id="statusIndicator"></div>
+        <div id="usercard" class="card"></div>
+      </div>
+    </main>
   </body>
 </html>
 
 <!-- 
 <script src="polyfill.js"></script>
 <script src="stringConverter.js"></script> -->
-
