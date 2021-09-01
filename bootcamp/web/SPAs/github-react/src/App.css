@@ -1,10 +1,30 @@
+html {
+  background-color: #f3ebe5;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+input,
+button {
+  padding: 10px;
+}
+
 .card {
   background: lightgray;
   padding: 20px;
-  margin: 20px 0;
   display: inline-block;
-  width: 250px;
+  width: 220px;
   text-align: center;
+  box-shadow: 0px 10px 10px 0px grey;
+}
+
+#content {
+  display: grid;
+  place-items: center;
+  margin-top: 30px;
 }
 
 .card * {
