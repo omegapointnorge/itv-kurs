@@ -35,7 +35,7 @@
 
             public T[] Add(T addThis)
             {
-                if (List == null)
+                if (List is null)
                 {
                     List = new T[] {addThis};
                 }

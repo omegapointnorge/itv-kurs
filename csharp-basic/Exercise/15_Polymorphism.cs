@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Exercises
+﻿namespace Exercises
 {
     /*
     By altering _only_ Line and Circle, make the SumOfSizes return 12.
@@ -10,7 +7,7 @@ namespace Exercises
 
     public class OverloadShapes
     {
-        public List<Shape> Shapes = new List<Shape> {new Shape(), new Circle(), new Line()};
+        public List<Shape> Shapes = new() {new Shape(), new Circle(), new Line()};
 
         public int SumOfSize()
         {

@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Exercises;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Tests
 {
     [TestClass]
     public class AsyncAwaitTestMethods

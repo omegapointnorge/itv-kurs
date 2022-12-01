@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Exercises
+﻿namespace Exercises
 {
     public static class ExtensionMethods
     {

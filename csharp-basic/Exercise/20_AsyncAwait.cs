@@ -1,15 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace Exercises
+﻿namespace Exercises
 {
     public class AsyncAwait
     {
-        private readonly John John = new John();
-        private readonly Clair Clair = new Clair();
-        private readonly Mother Mother = new Mother();
+        private readonly John _john = new();
+        private readonly Clair _clair = new();
+        private readonly Mother _mother = new();
 
-        public int TotalStarsOnRefrigerator => John.StarsOnRefrigerator + Clair.StarsOnRefrigerator;
+        public int TotalStarsOnRefrigerator => _john.StarsOnRefrigerator + _clair.StarsOnRefrigerator;
 
         /*
         The following method tells Clair and John to go do their duties.
@@ -22,10 +19,10 @@ namespace Exercises
         */
         public async Task TellTheKidsToDoTheirDuties()
         {
-            var johnFinished =  await John.CleanRoom();
-            var clairFinished = await Clair.TakeOutGarbage();
+            var johnFinished =  await _john.CleanRoom();
+            var clairFinished = await _clair.TakeOutGarbage();
 
-            Mother.PutUpStars(johnFinished, clairFinished);
+            _mother.PutUpStars(johnFinished, clairFinished);
         }
     }
 

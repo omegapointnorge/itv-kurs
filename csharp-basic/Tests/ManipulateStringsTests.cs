@@ -1,12 +1,12 @@
-﻿using Exercises;
+﻿using Exercise;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Tests
 {
     [TestClass]
-    public class ManipulaTestMethodringsTestMethods
+    public class ManipulateStringsTestMethods
     {
-        private ManipulateTestMethodStrings _manipulateTestMethodStrings = new ManipulateTestMethodStrings();
+        private readonly ManipulateTestMethodStrings _manipulateTestMethodStrings = new();
 
         [TestMethod]
         public void PlusOperatorConcatStrings()
@@ -43,7 +43,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void CheckForNullOrEmpty2()
         {
-            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty(null);
+            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty(null!);
 
             Assert.AreEqual("Empty string", result);
         }

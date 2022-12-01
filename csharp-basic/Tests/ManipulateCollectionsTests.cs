@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
-using CSharpKurs.TestMethods;
+using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Exercises.Tests
+namespace Tests
 {
     [TestClass]
     public class ManipulateCollectionsTestMethods
     {
 
-        private readonly ManipulateCollections _task = new ManipulateCollections();
-        private readonly ManipulateCollectionsAdvanced _task2 = new ManipulateCollectionsAdvanced();
+        private readonly ManipulateCollections _task = new();
+        private readonly ManipulateCollectionsAdvanced _task2 = new();
 
 
         [TestMethod]

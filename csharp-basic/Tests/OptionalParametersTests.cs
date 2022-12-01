@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Reflection;
 using Exercises;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Tests
 {
     [TestClass]
     public class OptionalParametersTestMethods
@@ -13,10 +13,10 @@ namespace CSharpKurs.TestMethods
         {
             var type = typeof(OptionalParameters);
             var ctor = type.GetConstructor(new[] { typeof(int) });
-            var instance = ctor.Invoke(new object[] { Type.Missing }) as OptionalParameters;
+            var instance = ctor!.Invoke(new[] { Type.Missing }) as OptionalParameters;
             var field = (int)type.GetField("_myNumber",
-                        BindingFlags.NonPublic |
-                        BindingFlags.Instance).GetValue(instance);
+                BindingFlags.NonPublic |
+                BindingFlags.Instance)!.GetValue(instance)!;
             Assert.AreEqual(0, field);
         }
 
@@ -25,7 +25,7 @@ namespace CSharpKurs.TestMethods
         {
             var optionalParameters = new OptionalParameters(1337);
             var method = optionalParameters.GetType().GetMethod("OptionalStringParameter");
-            var result = method.Invoke(optionalParameters, new object[] { "Ole", Type.Missing });
+            var result = method!.Invoke(optionalParameters, new[] { "Ole", Type.Missing });
             Assert.AreEqual("Hello Ole Olsen", result);
         }
 
@@ -34,7 +34,7 @@ namespace CSharpKurs.TestMethods
         {
             var optionalParameters = new OptionalParameters(1337);
             var method = optionalParameters.GetType().GetMethod("CanFirstParameterBeOptional");
-            var result = method.Invoke(optionalParameters, new object[] { "Per", Type.Missing });
+            var result = method!.Invoke(optionalParameters, new[] { "Per", Type.Missing });
             Assert.AreEqual("Hello Per Olsen", result);
         }
 
@@ -43,7 +43,7 @@ namespace CSharpKurs.TestMethods
         {
             var optionalParameters = new OptionalParameters(1337);
             var method = optionalParameters.GetType().GetMethod("CanFirstParameterBeOptional");
-            var result = method.Invoke(optionalParameters, new object[] { Type.Missing, Type.Missing });
+            var result = method!.Invoke(optionalParameters, new[] { Type.Missing, Type.Missing });
             Assert.AreEqual("Hello Ole Olsen", result);
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Exercises.Tests
+namespace Tests
 {
     [TestClass]
     public class IteratorsTestMethods
@@ -52,7 +53,6 @@ namespace Exercises.Tests
         public void DaysOfTheWeek_should_be_possible_to_iterate()
         {
             var days = new Iterators.DaysOfTheWeek();
-            days.ToList();
             Assert.AreEqual(7, days.Count());
         }
 

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Reflection;
+using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Exercises.Tests
+namespace Tests
 {
     [TestClass]
     public class FunWithGenericsTestMethods
     {
-        private readonly FunWithGenerics _funWithGenerics = new FunWithGenerics();
-        private readonly FunWithGenerics2 _funWithGenerics2 = new FunWithGenerics2();
-        private readonly FunWithGenerics3 _funWithGenerics3 = new FunWithGenerics3();
-        private readonly FunWithGenerics4 _funWithGenerics4 = new FunWithGenerics4();
+        private readonly FunWithGenerics _funWithGenerics = new();
+        private readonly FunWithGenerics3 _funWithGenerics3 = new();
+        private readonly FunWithGenerics4 _funWithGenerics4 = new();
 
         [TestMethod]
         public void MyVeryOwnListShouldTakeGenericParameter()
@@ -27,13 +27,13 @@ namespace Exercises.Tests
         {
             var myVeryOwnList2 = new FunWithGenerics2.MyVeryOwnListWithGenericArray<int>();
 
-            var TestMethod = new[] { 1, 2 };
+            var testMethod = new[] { 1, 2 };
 
             var properties = myVeryOwnList2.GetType().GetProperties();
 
             if (properties.Length == 1)
             {
-                Assert.AreEqual(TestMethod.GetType(), properties[0].PropertyType);
+                Assert.AreEqual(testMethod.GetType(), properties[0].PropertyType);
             }
             else
             {
@@ -52,13 +52,13 @@ namespace Exercises.Tests
 
             var types = _funWithGenerics3.GetType().GetNestedTypes(BindingFlags.Public);
 
-            Type constructed = types[0].MakeGenericType(myVeryOwnList3.GetType().GenericTypeArguments);
+            var constructed = types[0].MakeGenericType(myVeryOwnList3.GetType().GenericTypeArguments);
 
             var addMethod = constructed.GetMethod("Add");
 
-            addMethod.Invoke(myVeryOwnList3, new object[] {3});
+            addMethod!.Invoke(myVeryOwnList3, new object[] {3});
 
-            var expected = new int[] { 1, 2, 3 };
+            var expected = new[] { 1, 2, 3 };
 
             Assert.AreEqual(expected.Length, myVeryOwnList3.List.Length);
             Assert.AreEqual(expected[0], myVeryOwnList3.List[0]);
@@ -70,25 +70,25 @@ namespace Exercises.Tests
         public void MyVeryOwnListWithSumAll()
         {
             var myVeryOwnList4 = new FunWithGenerics4.MyVeryOwnListWithSumAll<FunWithGenerics4.ISummable>();
-            FunWithGenerics4.ISummable[] list = new FunWithGenerics4.ISummable[0];
+            var list = Array.Empty<FunWithGenerics4.ISummable>();
             myVeryOwnList4.List = list;
 
-            var TestMethod1 = new Summable(1);
-            var TestMethod2 = new Summable(2);
-            var TestMethod3 = new Summable(3);
+            var testMethod1 = new Summable(1);
+            var testMethod2 = new Summable(2);
+            var testMethod3 = new Summable(3);
 
             var types = _funWithGenerics4.GetType().GetNestedTypes(BindingFlags.Public);
-            Type constructed = types[1].MakeGenericType(myVeryOwnList4.GetType().GenericTypeArguments);
+            var constructed = types[1].MakeGenericType(myVeryOwnList4.GetType().GenericTypeArguments);
 
             var addMethod = constructed.GetMethod("Add");
 
-            addMethod.Invoke(myVeryOwnList4, new object[] { TestMethod1 });
-            addMethod.Invoke(myVeryOwnList4, new object[] { TestMethod2 });
-            addMethod.Invoke(myVeryOwnList4, new object[] { TestMethod3 });
+            addMethod!.Invoke(myVeryOwnList4, new object[] { testMethod1 });
+            addMethod.Invoke(myVeryOwnList4, new object[] { testMethod2 });
+            addMethod.Invoke(myVeryOwnList4, new object[] { testMethod3 });
 
             var sumAllMethod = constructed.GetMethod("SumAll");
 
-            var value = sumAllMethod.Invoke(myVeryOwnList4, null);
+            var value = sumAllMethod!.Invoke(myVeryOwnList4, null);
 
             Assert.AreEqual(6, value);
         }

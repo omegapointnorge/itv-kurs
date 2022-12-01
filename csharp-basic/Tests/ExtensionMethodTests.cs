@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Exercises.Tests
+namespace Tests
 {
     [TestClass]
     public class ExtensionMethodTestMethods
@@ -13,7 +15,7 @@ namespace Exercises.Tests
             if (typeof(ExtensionMethods).GetMethod("WordCount", new []{typeof(string)}) != null)
             {
                 var wordCountMethodInfo = typeof (ExtensionMethods).GetMethod("WordCount", new []{ typeof(string)} );
-                var count = wordCountMethodInfo.Invoke(null, new[] {"Word1 Word2"});
+                var count = wordCountMethodInfo?.Invoke(null, new[] {"Word1 Word2"}.ToArray<object>());
                 Assert.AreEqual(2, count);
             }
             else
@@ -28,8 +30,8 @@ namespace Exercises.Tests
             if (typeof(ExtensionMethods).GetMethod("AddToAllIntInList", new []{typeof(List<int>), typeof(int)}) != null)
             {
                 var methodInfo =typeof(ExtensionMethods).GetMethod("AddToAllIntInList", new []{typeof(List<int>), typeof(int)});
-                var count = (List<int>) methodInfo.Invoke(null, new object[] { new List<int>{1,2,3}, 1});
-                Assert.AreEqual(2, count[0]);
+                var count = (List<int>) methodInfo!.Invoke(null, new object[] { new List<int>{1,2,3}, 1});
+                Assert.AreEqual(2, count![0]);
                 Assert.AreEqual(3, count[1]);
                 Assert.AreEqual(4, count[2]);
             }

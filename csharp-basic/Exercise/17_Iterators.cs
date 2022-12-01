@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Exercises
 {
@@ -42,11 +40,11 @@ namespace Exercises
          */ 
         public class DaysOfTheWeek : IEnumerable<string>
         {
-            private readonly List<string> _days =  new List<string>{ "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
+            private readonly List<string> _days =  new() { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
 
             public IEnumerator<string> GetEnumerator()
             {
-                return _days.GetEnumerator();
+                return null;
             }
 
             IEnumerator IEnumerable.GetEnumerator()

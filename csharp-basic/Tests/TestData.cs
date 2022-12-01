@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Exercises;
 
-namespace CSharpKurs.TestMethods
+namespace Tests
 {
     public class TestMethodData
     {
-        public static List<Person> TestMethodPersons => new List<Person>
+        public static List<Person> TestMethodPersons => new()
         {
             new Person
             {
@@ -42,22 +42,22 @@ namespace CSharpKurs.TestMethods
 
         public static List<Dog> TestMethodDogs => new List<Dog>
         {
-            new Dog
+            new()
             {
                 Name = "Alex",
                 DogId = 1
             },
-            new Dog
+            new()
             {
                 Name = "Bota",
                 DogId = 2
             },
-            new Dog
+            new()
             {
                 Name = "Beef",
                 DogId = 3
             },
-            new Dog
+            new()
             {
                 Name = "Hendricks",
                 DogId = 4

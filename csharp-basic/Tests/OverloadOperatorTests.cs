@@ -1,8 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Reflection;
-using Exercises;
+﻿using Exercises;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Tests
 {
     [TestClass]
     public class OverloadOperatorTestMethods
@@ -16,8 +15,8 @@ namespace CSharpKurs.TestMethods
 
             if (typeof(Plank).GetMethod("op_Addition") != null)
             {
-                var resultPlank = typeof(Plank).GetMethod("op_Addition").Invoke(null, new Plank[] { plank1, plank2 });
-                Assert.AreEqual(6, ((Plank)resultPlank).Length);
+                var resultPlank = typeof(Plank).GetMethod("op_Addition")!.Invoke(null, new object[] { plank1, plank2 });
+                Assert.AreEqual(6, ((Plank)resultPlank)!.Length);
             }
             else
             {
