@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
+using Exercises;
 
 namespace CSharpKurs.TestMethods
 {

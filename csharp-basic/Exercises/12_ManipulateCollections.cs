@@ -1,10 +1,6 @@
-
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 
-namespace CSharpKurs
+namespace Exercises
 {
     /*
     Try to solve the following tasks in one line, using linq.
@@ -32,8 +28,8 @@ namespace CSharpKurs
         }
 
         /*
-        Given a list of strings, {"Anders", "Ole", "Kato"},
-        should return the list sorted by length {"Ole", "Kato", "Anders"} 
+        Given a list of strings, {"Allison", "Bob", "Carl"},
+        should return the list sorted by length {"Bob", "Carl", "Allison"} 
         */
         public List<string> OrderByLengthOfStrings(IEnumerable<string> listOfStrings)
         {

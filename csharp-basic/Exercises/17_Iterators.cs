@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CSharpKurs
+namespace Exercises
 {
     public class Iterators
     {
         /*
          * Use "yield return" to return numbers from 0 to 9 in sequence. 
-         * This methos returns an IEnumerator. 
+         * This method returns an IEnumerator. 
          */
         public IEnumerator<int> ReturnNumbersFromZeroToNineEnumerator()
         {
@@ -17,7 +17,7 @@ namespace CSharpKurs
 
         /*
         * Use "yield return" to return numbers from 0 to 9 in sequence. 
-        * This methos returns an IEnumerable. 
+        * This method returns an IEnumerable. 
         */
         public IEnumerable<int> ReturnNumbersFromZeroToNineEnumerable()
         {
@@ -42,11 +42,11 @@ namespace CSharpKurs
          */ 
         public class DaysOfTheWeek : IEnumerable<string>
         {
-            string[] days = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };          
+            private readonly List<string> _days =  new List<string>{ "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
 
             public IEnumerator<string> GetEnumerator()
             {
-                return null;
+                return _days.GetEnumerator();
             }
 
             IEnumerator IEnumerable.GetEnumerator()

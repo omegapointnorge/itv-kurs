@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Exercises;
 
 namespace CSharpKurs.TestMethods
 {
@@ -8,7 +9,7 @@ namespace CSharpKurs.TestMethods
         {
             new Person
             {
-                Name = "Anders",
+                Name = "Allison",
                 Age = 25,
                 Height = 185,
                 Weight = 70,
@@ -16,7 +17,7 @@ namespace CSharpKurs.TestMethods
             },
             new Person
             {
-                Name = "Kato",
+                Name = "Carl",
                 Age = 28,
                 Height = 195,
                 Weight = 90,
@@ -24,7 +25,7 @@ namespace CSharpKurs.TestMethods
             },
             new Person
             {
-                Name = "Ole",
+                Name = "Ken",
                 Age = 28,
                 Height = 192,
                 Weight = 110

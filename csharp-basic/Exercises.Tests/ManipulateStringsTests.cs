@@ -1,16 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Exercises;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSharpKurs.TestMethods
 {
     [TestClass]
     public class ManipulaTestMethodringsTestMethods
     {
-        private ManipulaTestMethodrings _manipulaTestMethodrings = new ManipulaTestMethodrings();
+        private ManipulateTestMethodStrings _manipulateTestMethodStrings = new ManipulateTestMethodStrings();
 
         [TestMethod]
         public void PlusOperatorConcatStrings()
         {
-            var result = _manipulaTestMethodrings.PlusOperatorConcatStrings();
+            var result = _manipulateTestMethodStrings.PlusOperatorConcatStrings();
 
             Assert.AreEqual("Hello World", result);
         }
@@ -18,7 +19,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void FormatString()
         {
-            var result = _manipulaTestMethodrings.StringFormat();
+            var result = _manipulateTestMethodStrings.StringFormat();
 
             Assert.AreEqual("Hello to you too World", result);
         }
@@ -26,7 +27,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void StringInterpolation()
         {
-            var result = _manipulaTestMethodrings.StringInterpolation();
+            var result = _manipulateTestMethodStrings.StringInterpolation();
 
             Assert.AreEqual("Hello to you too World", result);
         }
@@ -34,7 +35,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void CheckForNullOrEmpty()
         {
-            var result = _manipulaTestMethodrings.CheckForNullOrEmpty("");
+            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty("");
 
             Assert.AreEqual("Empty string", result);
         }
@@ -42,7 +43,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void CheckForNullOrEmpty2()
         {
-            var result = _manipulaTestMethodrings.CheckForNullOrEmpty(null);
+            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty(null);
 
             Assert.AreEqual("Empty string", result);
         }
@@ -50,7 +51,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void CheckForNullOrEmpty3()
         {
-            var result = _manipulaTestMethodrings.CheckForNullOrEmpty("a");
+            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty("a");
 
             Assert.AreEqual("Hello World", result);
         }
@@ -58,7 +59,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void CheckForNullOrEmpty4()
         {
-            var result = _manipulaTestMethodrings.CheckForNullOrEmpty("Hello World");
+            var result = _manipulateTestMethodStrings.CheckForNullOrEmpty("Hello World");
 
             Assert.AreEqual("Hello World", result);
         }

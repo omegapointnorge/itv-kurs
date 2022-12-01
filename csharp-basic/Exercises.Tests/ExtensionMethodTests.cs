@@ -1,8 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Exercises.Tests
 {
     [TestClass]
     public class ExtensionMethodTestMethods
@@ -14,7 +13,7 @@ namespace CSharpKurs.TestMethods
             if (typeof(ExtensionMethods).GetMethod("WordCount", new []{typeof(string)}) != null)
             {
                 var wordCountMethodInfo = typeof (ExtensionMethods).GetMethod("WordCount", new []{ typeof(string)} );
-                var count = wordCountMethodInfo.Invoke(null, new[] {"Anders Kofoed"});
+                var count = wordCountMethodInfo.Invoke(null, new[] {"Word1 Word2"});
                 Assert.AreEqual(2, count);
             }
             else
@@ -44,7 +43,7 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void Should_count_words_of_all_strings_in_list()
         {
-            var listOfStrings = new List<string> {"Keep It Simply Silly", "Sorry mama", "Anders"};
+            var listOfStrings = new List<string> {"Keep It Simply Silly", "Sorry mama", "Simple"};
             var result = ExtensionMethods.CountWordsOfMultipleStrings(listOfStrings);
             Assert.AreEqual(7, result);
         }

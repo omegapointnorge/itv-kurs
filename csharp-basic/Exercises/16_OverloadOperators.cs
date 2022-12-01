@@ -1,4 +1,4 @@
-﻿namespace CSharpKurs
+﻿namespace Exercises
 {
 
     public class Plank

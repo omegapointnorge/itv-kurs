@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace CSharpKurs
+namespace Exercises
 {
     public class ManipulateCollectionsAdvanced
     {
-
-
-
-
         /*
         Given a list of Persons, get all that are older than 25 years old, and sort them by height.
          */
@@ -32,7 +25,6 @@ namespace CSharpKurs
         Given a list of Persons, and a list of Dogs, return a new list of Persons with DogNames.
         The person with dogId = 1 should have the dog with the same Id.    
          */
-
         public List<Person> PersonsWithDogs(List<Person> persons, List<Dog> dogs)
         {
             return new List<Person>();

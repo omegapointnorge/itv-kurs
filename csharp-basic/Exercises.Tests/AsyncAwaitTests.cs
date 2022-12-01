@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Exercises;
 
 namespace CSharpKurs.TestMethods
 {
@@ -19,7 +20,7 @@ namespace CSharpKurs.TestMethods
             stopwatch.Stop();
 
             Assert.IsTrue(stopwatch.Elapsed < TimeSpan.FromSeconds(6));
-            Assert.AreEqual(2, task.TotalStarsOnRefridgitrator);
+            Assert.AreEqual(2, task.TotalStarsOnRefrigerator);
         }
     }
 }

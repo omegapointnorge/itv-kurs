@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace CSharpKurs
+namespace Exercises
 {
     /*
     By altering _only_ Line and Circle, make the SumOfSizes return 12.

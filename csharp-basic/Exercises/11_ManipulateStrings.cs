@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CSharpKurs
+﻿namespace Exercises
 {
     /* 
        We will start with some simple tasks that show different ways to work with strings in C#
     */
-    public class ManipulaTestMethodrings
+    public class ManipulateTestMethodStrings
     {
         /* 
             In C# the '+' operator can be used to concat two strings. Make the following method return the string "Hello World".

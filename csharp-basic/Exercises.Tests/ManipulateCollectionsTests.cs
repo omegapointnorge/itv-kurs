@@ -1,8 +1,9 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using CSharpKurs.TestMethods;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpKurs.TestMethods
+namespace Exercises.Tests
 {
     [TestClass]
     public class ManipulateCollectionsTestMethods
@@ -22,9 +23,9 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void Should_contain_only_elements_starting_with_A()
         {
-            IEnumerable<string> listOfStrings = new List<string> { "Anders", "Michael", "John", "Anna", "Julie"};
+            IEnumerable<string> listOfStrings = new List<string> { "Allison", "Michael", "John", "Anna", "Julie"};
             var result = _task.FilterElementsStartingWithA(listOfStrings);
-            Assert.IsTrue(result.Contains("Anders"));
+            Assert.IsTrue(result.Contains("Allison"));
             Assert.IsTrue(result.Contains("Anna"));
             Assert.AreEqual(2, result.Count);
         }
@@ -32,12 +33,12 @@ namespace CSharpKurs.TestMethods
         [TestMethod]
         public void Should_order_by_length()
         {
-            IEnumerable<string> listOfStrings = new List<string> {"Anders", "Ole", "Kato"};
+            IEnumerable<string> listOfStrings = new List<string> {"Sebastian", "Ken", "Alice"};
             var result = _task.OrderByLengthOfStrings(listOfStrings);
 
-            Assert.AreEqual(result[0], "Ole");
-            Assert.AreEqual(result[1], "Kato");
-            Assert.AreEqual(result[2], "Anders");
+            Assert.AreEqual(result[0], "Ken");
+            Assert.AreEqual(result[1], "Alice");
+            Assert.AreEqual(result[2], "Sebastian");
         }
 
         [TestMethod]
@@ -52,8 +53,8 @@ namespace CSharpKurs.TestMethods
         {
             var filteredPersons = _task2.PersonsOlderThan20SortedByHeight(TestMethodData.TestMethodPersons);
 
-            Assert.AreEqual("Ole", filteredPersons[0].Name);
-            Assert.AreEqual("Kato", filteredPersons[1].Name);
+            Assert.AreEqual("Ken", filteredPersons[0].Name);
+            Assert.AreEqual("Carl", filteredPersons[1].Name);
         }
 
 
@@ -62,10 +63,10 @@ namespace CSharpKurs.TestMethods
         {
             var personsWithDogNames = _task2.PersonsWithDogs(TestMethodData.TestMethodPersons, TestMethodData.TestMethodDogs);
 
-            Assert.AreEqual("Anders", personsWithDogNames[0].Name);
+            Assert.AreEqual("Allison", personsWithDogNames[0].Name);
             Assert.AreEqual("Alex", personsWithDogNames[0].DogName);
 
-            Assert.AreEqual("Kato", personsWithDogNames[1].Name);
+            Assert.AreEqual("Carl", personsWithDogNames[1].Name);
             Assert.AreEqual("Bota", personsWithDogNames[1].DogName);
         }
 

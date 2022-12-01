@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace CSharpKurs
+namespace Exercises
 {
     public static class ExtensionMethods
     {
@@ -22,7 +20,7 @@ namespace CSharpKurs
         /*
         Using the extension method you just created, implement the following method.
         It should return the total word count for all string in the list argument.
-        E.g. the list {"Keep It Simply Silly", "Sorry mama", "Anders"} 
+        E.g. the list {"Keep It Simply Silly", "Sorry mama", "Simple"} 
         should return 7.
         !Tips: use linq method sum together with your extenstion method 
          */
