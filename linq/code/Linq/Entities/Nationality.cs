@@ -1,4 +1,4 @@
-﻿namespace Linq
+﻿namespace Linq.Entities
 {
     public enum Nationality
     {

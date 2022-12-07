@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Linq
+namespace Linq.Entities
 {
     public class Person
     {

@@ -1,53 +1,53 @@
-using Linq.Solution;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Linq.Entities;
 
-namespace Linq
+namespace Linq.Exercises
 {
     public class LinqExercises
     {
-        public IEnumerable<Person> E1_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
+        public IEnumerable<Person> E01_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
         {
             return Enumerable.Empty<Person>();
         }
 
-        public Person E2_Get_First_Person_In_List(IEnumerable<Person> data)
+        public Person E02_Get_First_Person_In_List(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public Person E3_Get_Last_Person_In_List(IEnumerable<Person> data)
+        public Person E03_Get_Last_Person_In_List(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public IEnumerable<Person> E4_Get_All_Persons_From_Norway(IEnumerable<Person> data)
+        public IEnumerable<Person> E04_Get_All_Persons_From_Norway(IEnumerable<Person> data)
         {
             return Enumerable.Empty<Person>();
         }
 
-        public Person E5_Get_The_Youngest_Person_From_Sweden(IEnumerable<Person> data)
+        public Person E05_Get_The_Youngest_Person_From_Sweden(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public string E6_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(IEnumerable<Person> data)
+        public string E06_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(IEnumerable<Person> data)
         {
             return string.Empty;
         }
 
-        public bool? E7_Validate_That_All_Persons_In_List_Are_From_England(IEnumerable<Person> data)
+        public bool? E07_Validate_That_All_Persons_In_List_Are_From_England(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public bool? E8_Validate_That_At_Least_One_Person_Is_From_Danmark(IEnumerable<Person> data)
+        public bool? E08_Validate_That_At_Least_One_Person_Is_From_Denmark(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public int E9_Get_The_Number_Of_Person_In_The_List(IEnumerable<Person> data)
+        public int E09_Get_The_Number_Of_Person_In_The_List(IEnumerable<Person> data)
         {
             return 0;
         }
@@ -82,12 +82,12 @@ namespace Linq
             return DateTime.MinValue;
         }
 
-        public Person T16_1_Get_The_Person_With_The_Second_Highest_Number_Of_Kids(IEnumerable<Person> data)
+        public Person E16_1_Get_The_Person_With_The_Second_Highest_Number_Of_Kids(IEnumerable<Person> data)
         {
             return null;
         }
 
-        public IEnumerable<Person> T17_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids(IEnumerable<Person> data)
+        public IEnumerable<Person> E17_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids(IEnumerable<Person> data)
         {
             return Enumerable.Empty<Person>();
         }

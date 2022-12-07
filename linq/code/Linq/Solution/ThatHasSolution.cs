@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Linq.Entities;
 
 namespace Linq.Solution
 {
@@ -19,7 +17,7 @@ namespace Linq.Solution
          * before finally returning the result. 
          * 
          * Note: The function is made static so we do not need to create a new
-         * instace of ThatHasSolution in order for it to be used.
+         * instance of ThatHasSolution in order for it to be used.
          * 
          * Method is now called as 
          *      ThatHas(personList, predicate) 

@@ -1,37 +1,38 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Linq.Entities;
 
-namespace Linq
+namespace Linq.Solution
 {
     public class LinqSolutions
     {
-        public IEnumerable<Person> S1_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
+        public IEnumerable<Person> S01_Filter_Persons_With_FirstName_Starting_With_A(IEnumerable<Person> data)
         {
             return data.Where(x => x.FirstName.StartsWith("A"));
         }
 
-        public Person S2_Get_First_Person_In_List(IEnumerable<Person> data)
+        public Person S02_Get_First_Person_In_List(IEnumerable<Person> data)
         {
             return data.First();
         }
 
-        public Person S3_Get_Last_Person_In_List(IEnumerable<Person> data)
+        public Person S03_Get_Last_Person_In_List(IEnumerable<Person> data)
         {
             return data.Last();
         }
 
-        public IEnumerable<Person> S4_Get_All_Persons_From_Norway(IEnumerable<Person> data)
+        public IEnumerable<Person> S04_Get_All_Persons_From_Norway(IEnumerable<Person> data)
         {
             return data.Where(x => x.Nationality == Nationality.Norwegian);
         }
 
-        public Person S5_Get_The_Youngest_Person_From_Sweden(IEnumerable<Person> data)
+        public Person S05_Get_The_Youngest_Person_From_Sweden(IEnumerable<Person> data)
         {
             return data.OrderByDescending(x => x.Birthday).First(x => x.Nationality == Nationality.Swedish);
         }
 
-        public string S6_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(IEnumerable<Person> data)
+        public string S06_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(IEnumerable<Person> data)
         {
             return data.OrderByDescending(x => x.LastName.Length)
                 .ThenBy(x => x.LastName)
@@ -39,17 +40,17 @@ namespace Linq
                 .First();
         }
 
-        public bool S7_Validate_That_All_Persons_In_List_Are_From_England(IEnumerable<Person> data)
+        public bool S07_Validate_That_All_Persons_In_List_Are_From_England(IEnumerable<Person> data)
         {
             return data.All(x => x.Nationality == Nationality.English);
         }
 
-        public bool S8_Validate_That_At_Least_One_Person_Is_From_Danmark(IEnumerable<Person> data)
+        public bool S08_Validate_That_At_Least_One_Person_Is_From_Denmark(IEnumerable<Person> data)
         {
             return data.Any(x => x.Nationality == Nationality.Danish);
         }
 
-        public int S9_Get_The_Number_Of_Person_In_The_List(IEnumerable<Person> data)
+        public int S09_Get_The_Number_Of_Person_In_The_List(IEnumerable<Person> data)
         {
             return data.Count();
         }

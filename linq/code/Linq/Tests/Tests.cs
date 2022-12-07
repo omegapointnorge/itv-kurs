@@ -2,6 +2,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Linq.Entities;
+using Linq.Exercises;
+using Linq.Solution;
 
 namespace Linq
 {
@@ -21,79 +24,79 @@ namespace Linq
         }
 
         [TestMethod]
-        public void T1_1_Filter_Persons_With_FirstName_Starting_With_A()
+        public void T01_1_Filter_Persons_With_FirstName_Starting_With_A()
         {
-            var result = Exercises.E1_Filter_Persons_With_FirstName_Starting_With_A(Persons);
+            var result = Exercises.E01_Filter_Persons_With_FirstName_Starting_With_A(Persons);
             ListsAreEqual(new List<int> { 1, 2, 3 }, result);
         }
 
         [TestMethod]
-        public void T2_1_Get_First_Person_In_List()
+        public void T02_1_Get_First_Person_In_List()
         {
-            var result = Exercises.E2_Get_First_Person_In_List(Persons);
+            var result = Exercises.E02_Get_First_Person_In_List(Persons);
             Assert.AreEqual(1, result.Id);
         }
 
         [TestMethod]
-        public void T3_1_Get_Last_Person_In_List()
+        public void T03_1_Get_Last_Person_In_List()
         {
-            var result = Exercises.E3_Get_Last_Person_In_List(Persons);
+            var result = Exercises.E03_Get_Last_Person_In_List(Persons);
             Assert.AreEqual(9, result.Id);
         }
 
         [TestMethod]
-        public void T4_1_Get_All_Persons_From_Norway()
+        public void T04_1_Get_All_Persons_From_Norway()
         {
-            var result = Exercises.E4_Get_All_Persons_From_Norway(Persons);
+            var result = Exercises.E04_Get_All_Persons_From_Norway(Persons);
             ListsAreEqual(new List<int> { 1, 5, 7, 9 }, result);
         }
 
         [TestMethod]
-        public void T5_1_Get_The_Youngest_Person_From_Sweden()
+        public void T05_1_Get_The_Youngest_Person_From_Sweden()
         {
-            var result = Exercises.E5_Get_The_Youngest_Person_From_Sweden(Persons);
+            var result = Exercises.E05_Get_The_Youngest_Person_From_Sweden(Persons);
             Assert.AreEqual(3, result.Id);
         }
 
         [TestMethod]
-        public void T6_1_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically()
+        public void T06_1_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically()
         {
-            var result = Exercises.E6_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(Persons);
+            var result = Exercises.E06_Get_The_Longest_Lastname_If_Equal_Length_Return_Alphabetically(Persons);
             Assert.AreEqual("Arvesen", result);
         }
 
         [TestMethod]
-        public void T7_1_Validate_That_All_Persons_In_List_Are_From_England_Return_True_If_Only_EnglishMen_Present()
+        public void T07_1_Validate_That_All_Persons_In_List_Are_From_England_Return_True_If_Only_EnglishMen_Present()
         {
-            var result = Exercises.E7_Validate_That_All_Persons_In_List_Are_From_England(Persons.Where(x => x.Nationality == Nationality.English));
-            Assert.IsTrue(result.Value);
+            var result = Exercises.E07_Validate_That_All_Persons_In_List_Are_From_England(Persons.Where(x => x.Nationality == Nationality.English));
+            Assert.IsTrue(result!.Value);
         }
 
         [TestMethod]
-        public void T7_2_Validate_That_All_Persons_In_List_Are_From_England_Returns_False_If_Other_Nationality_Is_Present()
+        public void T07_2_Validate_That_All_Persons_In_List_Are_From_England_Returns_False_If_Other_Nationality_Is_Present()
         {
-            var result = Exercises.E7_Validate_That_All_Persons_In_List_Are_From_England(Persons);
-            Assert.IsFalse(result.Value);
+            var result = Exercises.E07_Validate_That_All_Persons_In_List_Are_From_England(Persons);
+            Assert.IsFalse(result!.Value);
         }
 
         [TestMethod]
-        public void T8_1_Validate_That_At_Least_One_Person_Is_From_Danmark_Returns_True_If_One_Danish_Exists()
+        public void T08_1_Validate_That_At_Least_One_Person_Is_From_Danmark_Returns_True_If_One_Danish_Exists()
         {
-            var result = Exercises.E8_Validate_That_At_Least_One_Person_Is_From_Danmark(Persons);
-            Assert.IsTrue(result.Value);
+            var result = Exercises.E08_Validate_That_At_Least_One_Person_Is_From_Denmark(Persons);
+            Assert.IsTrue(result!.Value);
         }
 
         [TestMethod]
-        public void T8_2_Validate_That_At_Least_One_Person_Is_From_Danmark_Returns_False_If_No_Danish_Exists()
+        public void T08_2_Validate_That_At_Least_One_Person_Is_From_Danmark_Returns_False_If_No_Danish_Exists()
         {
-            var result = Exercises.E8_Validate_That_At_Least_One_Person_Is_From_Danmark(Persons.Where(x => x.Nationality != Nationality.Danish));
-            Assert.IsFalse(result.Value);
+            var result = Exercises.E08_Validate_That_At_Least_One_Person_Is_From_Denmark(Persons.Where(x => x.Nationality != Nationality.Danish));
+            Assert.IsFalse(result!.Value);
         }
 
         [TestMethod]
-        public void T9_1_Get_The_Number_Of_Persons_In_The_List()
+        public void T09_1_Get_The_Number_Of_Persons_In_The_List()
         {
-            var result = Exercises.E9_Get_The_Number_Of_Person_In_The_List(Persons);
+            var result = Exercises.E09_Get_The_Number_Of_Person_In_The_List(Persons);
             Assert.AreEqual(9, result);
         }
 
@@ -128,39 +131,39 @@ namespace Linq
         }
 
         [TestMethod]
-        public void E14_1_Get_The_BirthDay_Of_The_Youngest_Person()
+        public void T14_1_Get_The_BirthDay_Of_The_Youngest_Person()
         {
             var result = Exercises.E14_Get_The_BirthDay_Of_The_Youngest_Person(Persons);
             Assert.AreEqual(new DateTime(2001, 1, 1), result);
         }
 
         [TestMethod]
-        public void E15_1_Get_The_BirthDay_Of_The_Oldest_Person()
+        public void T15_1_Get_The_BirthDay_Of_The_Oldest_Person()
         {
             var result = Exercises.E15_Get_The_BirthDay_Of_The_Oldest_Person(Persons);
             Assert.AreEqual(new DateTime(1927, 3, 5), result);
         }
 
         [TestMethod]
-        public void E16_Get_The_Person_With_The_Second_Highest_Number_Of_Kids()
+        public void T16_Get_The_Person_With_The_Second_Highest_Number_Of_Kids()
         {
-            var result = Exercises.T16_1_Get_The_Person_With_The_Second_Highest_Number_Of_Kids(Persons);
+            var result = Exercises.E16_1_Get_The_Person_With_The_Second_Highest_Number_Of_Kids(Persons);
             Assert.AreEqual(9, result.Id);
         }
 
         [TestMethod]
-        public void E17_1_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids()
+        public void T17_1_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids()
         {
-            var result = Exercises.T17_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids(Persons);
+            var result = Exercises.E17_Get_The_Two_Persons_With_The_Highest_Number_Of_Kids(Persons);
             ListsAreEqual(new List<int> { 4, 9 }, result);
         }
 
-        private void ListsAreEqual(List<int> expected, IEnumerable<Person> result)
+        private void ListsAreEqual(IEnumerable<int> expected, IEnumerable<Person> result)
         {
             CollectionAssert.AreEqual(result.OrderBy(x => x.Id).Select(x => x.Id).ToList(), expected.OrderBy(x => x).ToList());
         }
 
-        private void ListsAreEqual(List<string> expected, IEnumerable<string> result)
+        private void ListsAreEqual(IEnumerable<string> expected, IEnumerable<string> result)
         {
             CollectionAssert.AreEqual(result.OrderBy(x => x).ToList(), expected.OrderBy(x => x).ToList());
         }
@@ -169,17 +172,16 @@ namespace Linq
         {
             return new List<Person>()
             {
-                new Person(1, "Anne", "Hansen", new DateTime(1990, 10, 10), Nationality.Norwegian, 1, new List<string>{"98564732", "49030398" }),
-                new Person(2, "Arvid", "Jensen", new DateTime(1999, 8, 2) , Nationality.Danish, 0, new List<string>()),
-                new Person(3, "Are", "Vidar", new DateTime(1986, 5, 3), Nationality.Swedish, 2, new List<string>{"98564732", "44338867" }),
-                new Person(4, "Karl", "Lange", new DateTime(2001, 1, 1) , Nationality.English, 8, new List<string>{}),
-                new Person(5, "Helle", "Karlsen", new DateTime(1927, 3, 5), Nationality.Norwegian, 0, new List<string>{"44556677" }),
-                new Person(6, "Stine", "Br�then", new DateTime(1970, 11, 1), Nationality.Swedish,2, new List<string>{ }),
-                new Person(7, "Truls", "Krogh", new DateTime(1977, 03, 1), Nationality.Norwegian, 1, new List<string>{"91236474", "95498752" }),
-                new Person(8, "Bente", "Knek", new DateTime(1967, 03, 1), Nationality.Swedish, 0, new List<string>{ }),
-                new Person(9, "Petter", "Arvesen", new DateTime(1977, 03, 1), Nationality.Norwegian, 3, new List<string>{"91009080"})
+                new(1, "Anne", "Hansen", new DateTime(1990, 10, 10), Nationality.Norwegian, 1, new List<string> { "98564732", "49030398" }),
+                new(2, "Arvid", "Jensen", new DateTime(1999, 8, 2), Nationality.Danish, 0, new List<string>()),
+                new(3, "Are", "Vidar", new DateTime(1986, 5, 3), Nationality.Swedish, 2, new List<string> { "98564732", "44338867" }),
+                new(4, "Karl", "Lange", new DateTime(2001, 1, 1), Nationality.English, 8, new List<string> { }),
+                new(5, "Helle", "Karlsen", new DateTime(1927, 3, 5), Nationality.Norwegian, 0, new List<string> { "44556677" }),
+                new(6, "Stine", "Br�then", new DateTime(1970, 11, 1), Nationality.Swedish, 2, new List<string> { }),
+                new(7, "Truls", "Krogh", new DateTime(1977, 03, 1), Nationality.Norwegian, 1, new List<string> { "91236474", "95498752" }),
+                new(8, "Bente", "Knek", new DateTime(1967, 03, 1), Nationality.Swedish, 0, new List<string> { }),
+                new(9, "Petter", "Arvesen", new DateTime(1977, 03, 1), Nationality.Norwegian, 3, new List<string> { "91009080" })
             }.OrderBy(x => x.Id).ToList();
         }
     }
-
 }
