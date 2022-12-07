@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Exercises.Solved
+﻿namespace Solutions
 {
     /*
     By altering _only_ Line and Circle, make the SumOfSizes return 12.

@@ -25,14 +25,14 @@
         /*
          * Try to make the first parameter optional.
          * The default value for the firstName parameter should be "Ole"          
+         *
+         * This will not compile since the optional parameters must be defined at the end of the parameter list, 
+         * after any required parameters. Let the lastName parameter be optional as well, with "Olsen" as default value
          */
         public string CanFirstParameterBeOptional(string firstName, string lastName)
         {
             return $"Hello {firstName} {lastName}";
         }
 
-        /* This will not compile since the optional parameters must be defined at the end of the parameter list, 
-         * after any required parameters. Let the lastName parameter be optional as well, with "Olsen" as default value
-         */
     }
 }

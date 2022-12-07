@@ -1,4 +1,4 @@
-﻿namespace Exercises.Solved
+﻿namespace Solutions
 {
     /* 
        We will start with some simple tasks that show different ways to work with strings in C#

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -47,7 +47,7 @@ namespace Tests
         {
             var myVeryOwnList3 = new FunWithGenerics3.MyVeryOwnListWithGenericAddMethod<int>
             {
-                List = new[] { 1, 2 }
+                List = new List<int> { 1, 2 }
             };
 
             var types = _funWithGenerics3.GetType().GetNestedTypes(BindingFlags.Public);
@@ -60,7 +60,7 @@ namespace Tests
 
             var expected = new[] { 1, 2, 3 };
 
-            Assert.AreEqual(expected.Length, myVeryOwnList3.List.Length);
+            Assert.AreEqual(expected.Length, myVeryOwnList3.List.Count);
             Assert.AreEqual(expected[0], myVeryOwnList3.List[0]);
             Assert.AreEqual(expected[1], myVeryOwnList3.List[1]);
             Assert.AreEqual(expected[2], myVeryOwnList3.List[2]);
@@ -70,8 +70,6 @@ namespace Tests
         public void MyVeryOwnListWithSumAll()
         {
             var myVeryOwnList4 = new FunWithGenerics4.MyVeryOwnListWithSumAll<FunWithGenerics4.ISummable>();
-            var list = Array.Empty<FunWithGenerics4.ISummable>();
-            myVeryOwnList4.List = list;
 
             var testMethod1 = new Summable(1);
             var testMethod2 = new Summable(2);

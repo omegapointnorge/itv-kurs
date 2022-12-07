@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Exercises;
+using Solutions;
 
 namespace Tests
 {

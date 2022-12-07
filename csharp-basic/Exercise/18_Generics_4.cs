@@ -1,6 +1,5 @@
 ﻿namespace Exercises
 {
-
     /* 
     * In this next sections we will work with what we call constraint parameters. 
     * This is a way of saying that our generic parameter has to implement some specific functionality
@@ -10,12 +9,9 @@
 
     public class FunWithGenerics4
     {
- 
-
         /* 
          * First, add a Sum() method to the ISummable interface. This should return an int.
          */
-
         public interface ISummable
         {
         }
@@ -31,25 +27,11 @@
 
         public class MyVeryOwnListWithSumAll<T>
         {
-            public T[] List { get; set; }
+            public List<T> List { get; set; } = new();
 
-            public T[] Add(T addThis)
+            public List<T> Add(T addThis)
             {
-                if (List is null)
-                {
-                    List = new T[] {addThis};
-                }
-                else
-                {
-                    var temp = List;
-                    List = new T[temp.Length + 1];
-                    for (int i = 0; i < temp.Length; i++)
-                    {
-                        List[i] = temp[i];
-                    }
-                    List[temp.Length] = addThis;
-                }
-
+                List.Add(addThis);
                 return List;
             }
         }

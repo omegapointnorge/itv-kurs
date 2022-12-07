@@ -1,6 +1,5 @@
-﻿namespace Exercises.Solved
+﻿namespace Solutions
 {
-
     public class Plank
     {
         public int Length { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace Exercises.Solved
+﻿namespace Solutions
 {
     public class FunWithGenerics2
     {

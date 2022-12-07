@@ -15,7 +15,7 @@ namespace Tests
         {
             var task = new AsyncAwait();
 
-            Stopwatch stopwatch = Stopwatch.StartNew();
+            var stopwatch = Stopwatch.StartNew();
             await task.TellTheKidsToDoTheirDuties();
             stopwatch.Stop();
 

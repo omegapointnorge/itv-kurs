@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CSharpKurs
+﻿namespace Solutions
 {
     public class FunWithGenerics4
     {

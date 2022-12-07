@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Exercises.Solved
+﻿namespace Solutions
 {
     public class FunWithGenerics3
     {

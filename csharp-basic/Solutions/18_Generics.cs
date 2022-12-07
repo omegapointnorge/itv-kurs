@@ -1,4 +1,4 @@
-﻿namespace Exercises.Solved
+﻿namespace Solutions
 {
     /* 
      * Now we will attempt to solve some exercises where we will have to work with generics. This should be fun!

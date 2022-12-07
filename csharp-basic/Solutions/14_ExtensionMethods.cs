@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Exercises.Solved
+﻿namespace Solutions
 {
     public static class ExtensionMethods
     {

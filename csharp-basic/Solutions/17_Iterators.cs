@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Exercises.Solved
+namespace Solutions
 {
     public class Iterators
     {
