@@ -1,15 +1,20 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
+using WebAPI.Database;
+using WebAPI.Todo;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+// Setup in-Memory database
+builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 /* 
     In a modern authentication setup would you typically validate the incoming token towards a 
-    central identity provider by configuring options a
+    central identity provider by configuring options as seen below
 
     .AddJwtBearer(options =>
     {
@@ -22,16 +27,14 @@ builder.Services
         };
     })
 */
-;
+    ;
 
 
-/*
- *  Microsoft offer a built in dependency injection container
- *
- *  builder.Services.AddTransient<IMyClass, MyClass>()
- */
+// Microsoft offer a built in dependency injection container
+builder.Services.AddTransient<ITodoRepository, TodoRepository>();
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
